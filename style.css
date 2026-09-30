@@ -1,75 +1,18 @@
-/* ---------- COLORS (change them here!) ---------- */
-:root {
-  --biscuit: #C8893F;      /* main button color */
-  --biscuit-dark: #A66A26; /* hover color */
-  --biscuit-light: #F6E7CF;/* light background */
-  --chocolate: #3A2214;    /* dark text + footer */
-  --cream: #FFF9F0;        /* page background */
-}
+/* Bootstrap does most of the work. This file only adds our biscuit theme. */
+:root { --biscuit: #C8893F; --biscuit-dark: #A66A26; }
 
-/* ---------- BASIC SETUP ---------- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; background: var(--cream); color: var(--chocolate); }
-a { text-decoration: none; color: inherit; }
-button { cursor: pointer; border: none; font-size: 15px; }
+.bg-cream   { background: #FFF9F0; }
+.bg-feature { background: #F8ECD9; }
+.bg-choc    { background: #3A2214; }
+.bg-biscuit { background: var(--biscuit); }
+.text-biscuit { color: var(--biscuit-dark); }
 
-/* ---------- TOP MENU ---------- */
-.menu { display: flex; justify-content: space-between; align-items: center;
-        padding: 15px 6%; background: white; }
-.logo { font-family: cursive; }
-nav a { margin: 0 15px; padding-bottom: 5px; }
-nav a:hover, nav a.current { color: var(--biscuit-dark); border-bottom: 2px solid var(--biscuit); }
-.cart { font-size: 20px; }
-#cart-count { background: var(--biscuit); color: white; font-size: 12px;
-              padding: 2px 7px; border-radius: 10px; }
+/* biscuit button */
+.btn-biscuit { background: var(--biscuit); color: white; }
+.btn-biscuit:hover { background: var(--biscuit-dark); color: white; }
 
-/* ---------- BANNER ---------- */
-.banner { height: 295px; padding: 60px 6%; line-height: 1.8;
-          background: linear-gradient(90deg, #F7E6CC 35%, transparent 70%), url(images/hero.jpg) right center / cover; }
-.banner h1 { font-family: cursive; font-size: 60px; }
-.banner p { max-width: 380px; }
-
-/* ---------- CATEGORY BUTTONS ---------- */
-.filters { display: flex; flex-wrap: wrap; gap: 12px; padding: 35px 6% 10px; }
-.filter-btn { padding: 12px 24px; border-radius: 30px; background: var(--biscuit-light); }
-.filter-btn:hover { background: #efd5ae; }
+/* selected category button */
 .filter-btn.active { background: var(--biscuit); color: white; }
 
-/* ---------- PRODUCT CARDS ---------- */
-.products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 25px 6% 50px; }
-.card { background: white; padding: 10px; border-radius: 12px; position: relative;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
-.card:hover { transform: translateY(-5px); }
-.card img { width: 100%; height: 170px; object-fit: cover; border-radius: 8px; }
-.card h3 { margin: 8px 0 4px; font-size: 16px; }
-.badge { position: absolute; top: 20px; left: 20px; background: var(--biscuit-dark);
-         color: white; font-size: 12px; padding: 4px 10px; border-radius: 12px; }
-.tag { display: inline-block; margin-top: 10px; font-size: 11px; padding: 2px 8px;
-       background: var(--biscuit-light); border-radius: 6px; }
-.stars { color: #C0392B; font-size: 13px; }
-.price { font-size: 18px; font-weight: bold; margin: 8px 0; }
-
-/* ---------- BUTTONS (biscuit color) ---------- */
-.add-btn { width: 100%; padding: 11px; border-radius: 8px; color: white; background: var(--biscuit); }
-.add-btn:hover { background: var(--biscuit-dark); }
-
-/* ---------- FEATURES ---------- */
-.features { display: flex; justify-content: space-around; text-align: center;
-            padding: 35px 6%; background: #F8ECD9; line-height: 1.8; font-size: 14px; }
-
-/* ---------- FOOTER ---------- */
-footer { display: flex; justify-content: space-between; gap: 30px; padding: 40px 6%;
-         background: var(--chocolate); color: #e9d9c3; }
-footer h2, footer h4 { color: white; margin-bottom: 12px; }
-footer p { margin-bottom: 8px; font-size: 14px; }
-footer input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 6px; border: none; }
-.subscribe { width: auto; padding: 10px 20px; }
-.copyright { background: var(--chocolate); color: #e9d9c3; text-align: center;
-             padding: 15px; font-size: 13px; border-top: 1px solid #5a3d2b; }
-
-/* ---------- PHONE + TABLET ---------- */
-@media (max-width: 900px) {
-  .products { grid-template-columns: repeat(2, 1fr); }
-  .features, footer { flex-direction: column; }
-  nav { display: none; }
-}
+/* banner with the bread photo */
+.banner { background: linear-gradient(90deg, #F7E6CC 35%, transparent 70%), url(images/hero.jpg) right center / cover; }

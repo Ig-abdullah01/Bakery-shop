@@ -1,7 +1,6 @@
 // ---------- 1. ADD TO CART ----------
-// Every time someone clicks "Add to Cart", the number goes up by 1.
 var cartCount = 0;
-var addButtons = document.querySelectorAll(".card .add-btn");
+var addButtons = document.querySelectorAll(".product .add-btn");
 
 for (var i = 0; i < addButtons.length; i++) {
   addButtons[i].addEventListener("click", function () {
@@ -11,26 +10,24 @@ for (var i = 0; i < addButtons.length; i++) {
 }
 
 // ---------- 2. CATEGORY FILTER ----------
-// Click a category button -> show only the cards from that category.
+// "d-none" is a Bootstrap class that hides things.
 var filterButtons = document.querySelectorAll(".filter-btn");
-var cards = document.querySelectorAll(".card");
+var products = document.querySelectorAll(".product");
 
 for (var j = 0; j < filterButtons.length; j++) {
   filterButtons[j].addEventListener("click", function () {
     var chosen = this.dataset.category;
 
-    // move the brown "active" color to the clicked button
     for (var k = 0; k < filterButtons.length; k++) {
       filterButtons[k].classList.remove("active");
     }
     this.classList.add("active");
 
-    // show or hide each card
-    for (var m = 0; m < cards.length; m++) {
-      if (chosen === "All" || cards[m].dataset.category === chosen) {
-        cards[m].style.display = "block";
+    for (var m = 0; m < products.length; m++) {
+      if (chosen === "All" || products[m].dataset.category === chosen) {
+        products[m].classList.remove("d-none");
       } else {
-        cards[m].style.display = "none";
+        products[m].classList.add("d-none");
       }
     }
   });
